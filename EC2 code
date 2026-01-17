@@ -1,4 +1,14 @@
+provider "aws" {
+  region     = "ap-south-1"
+  access_key = "My access key"
+  secret_key = "My secret key"
+}
+
 resource "aws_instance" "myec2" {
-  ami           = "ami-00c39f71452c08778"
+  ami           = "ami-0ced6a024bb18ff2e"
   instance_type = "t2.micro"
+
+  tags = {
+    Name = "My-first-tf-instance"
+  }
 }
